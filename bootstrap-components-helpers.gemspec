@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.version      = '0.0.1'
   s.platform     = Gem::Platform::RUBY
 
-  s.files        = ['bootstrap_components_helpers.rb']
+  s.files        = ['bootstrap-components-helpers.rb']
   s.require_path = '.'
 
   s.author      = 'Ivan Schneider'

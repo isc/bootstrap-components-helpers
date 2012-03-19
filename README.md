@@ -2,15 +2,5 @@
 
 Description and usage:
 
-    require ''
-    .new
+    gem 'bootstrap-components-helpers', :git => 'git://gist.github.com/2117187.git'
 
-# Running the tests
-
-Install the rspec gem
-
-    gem install rspec
-
-Run the spec
-
-    rspec _spec.rb
