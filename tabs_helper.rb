@@ -2,7 +2,7 @@ module BootstrapComponentsHelpers
   module TabsHelper
     def tabs opts = {}
       opts[:direction] ||= 'above'
-      builder = TabsBuilder.new opts, self
+      builder = TabsBuilder.new self
       yield builder
       tabs = content_tag(:ul, builder.pane_handles.join("\n").html_safe, :class => 'nav nav-tabs')
       contents = content_tag(:div, builder.pane_contents.join("\n").html_safe, :class => 'tab-content')
@@ -21,10 +21,9 @@ module BootstrapComponentsHelpers
       attr_reader :parent, :pane_contents, :pane_handles
       delegate :capture, :content_tag, :to => :parent
 
-      def initialize opts, parent
+      def initialize parent
         @first = true
         @parent = parent
-        @opts = opts
         @pane_handles = []
         @pane_contents = []
       end
