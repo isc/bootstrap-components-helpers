@@ -2,9 +2,10 @@ module BootstrapComponentsHelpers
   module TabsHelper
     def tabs opts = {}
       opts[:direction] ||= 'above'
+      opts[:style] ||= 'tabs'
       builder = TabsBuilder.new self
       yield builder
-      tabs = content_tag(:ul, builder.pane_handles.join("\n").html_safe, :class => 'nav nav-tabs')
+      tabs = content_tag(:ul, builder.pane_handles.join("\n").html_safe, :class => "nav nav-#{opts[:style]}")
       contents = content_tag(:div, builder.pane_contents.join("\n").html_safe, :class => 'tab-content')
       css_direction = "tabs-#{opts[:direction]}" unless opts[:direction] == 'above'
       content_tag :div, :class => "tabbable #{css_direction}" do
@@ -39,6 +40,7 @@ module BootstrapComponentsHelpers
       end
 
     end
+    
   end
 end
 

@@ -16,8 +16,8 @@ In your Gemfile:
 
 `accordion` method options :
 
-  - `:accordion_id` : when you want more than one accordion on the same page
-  - `:open` : when you want the first pane to be open on load
+  - `:accordion_id` : when you want more than one accordion on the same page.
+  - `:open` : when you want the first pane to be open on load.
   
 ### Tabs helper:
 
@@ -29,4 +29,5 @@ In your Gemfile:
         
 `tabs` method options :
 
-  - `:direction` : to control the positioning of the tabs. Valid values are below, left, right and above (default).
+  - `:direction` : to control the positioning of the tabs. Valid values are `below`, `left`, `right` and `above` (default is `above`).
+  - `:style` : `tabs` or `pills` (default is `tabs`).
