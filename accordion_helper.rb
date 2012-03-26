@@ -11,7 +11,7 @@ module BootstrapComponentsHelpers
     class AccordionBuilder
 
       attr_reader :parent
-      delegate :capture, :to => :parent
+      delegate :capture, :content_tag, :link_to, :to => :parent
 
       def initialize opts, parent
         @first = true
@@ -20,20 +20,20 @@ module BootstrapComponentsHelpers
       end
 
       def pane title, &block
-        b = Builder::XmlMarkup.new
-        b.div :class => 'accordion-group' do
-          b.div :class => 'accordion-heading' do
-            b.a title, :class => 'accordion-toggle', :'data-toggle' => 'collapse',
-            :'data-parent' => "##{@opts[:accordion_id]}", :href => "##{title.parameterize}_pane"
+        css_class =  (@first && @opts[:open]) ? 'in' : ''
+        @first = false
+        content_tag :div, :class => 'accordion-group' do
+          heading = content_tag :div, :class => 'accordion-heading' do
+            link_to title, "##{title.parameterize}_pane", :class => 'accordion-toggle', :'data-toggle' => 'collapse',
+            :'data-parent' => "##{@opts[:accordion_id]}"
           end
-          css_class =  (@first && @opts[:open]) ? 'in' : ''
-          @first = false
-          b.div :class => "accordion-body collapse #{css_class}", :id => "#{title.parameterize}_pane" do
-            b.div :class => 'accordion-inner' do
-              b << capture(&block)
+          body = content_tag :div, :class => "accordion-body collapse #{css_class}", :id => "#{title.parameterize}_pane" do
+            content_tag :div, :class => 'accordion-inner' do
+              capture(&block)
             end
           end
-        end.html_safe
+          heading + body
+        end
       end
     end
   end
