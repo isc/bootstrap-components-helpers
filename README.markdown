@@ -4,7 +4,7 @@ Provides an `accordion` helper and a `tabs` helper
 
 In your Gemfile:
 
-    gem 'bootstrap-components-helpers', :git => 'git://gist.github.com/2117187.git'
+    gem 'bootstrap-components-helpers', :git => 'git://gist.github.com/4254678.git'
 
 ### Accordion helper:
     
