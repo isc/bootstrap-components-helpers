@@ -14,14 +14,12 @@ module BootstrapComponentsHelpers
       delegate :capture, :content_tag, :link_to, :to => :parent
 
       def initialize opts, parent
-        @first = true
         @parent = parent
         @opts = opts
       end
 
-      def pane title, &block
-        css_class =  (@first && @opts[:open]) ? 'in' : ''
-        @first = false
+      def pane title, options = {}, &block
+        css_class = options[:open] ? 'in' : ''
         content_tag :div, :class => 'accordion-group' do
           heading = content_tag :div, :class => 'accordion-heading' do
             link_to title, "##{title.parameterize}_pane", :class => 'accordion-toggle', :'data-toggle' => 'collapse',

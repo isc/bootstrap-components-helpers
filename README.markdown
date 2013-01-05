@@ -17,7 +17,10 @@ In your Gemfile:
 `accordion` method options :
 
   - `:accordion_id` : when you want more than one accordion on the same page.
-  - `:open` : when you want the first pane to be open on load.
+
+`pane` method options :
+
+  - `:open` : when you want that pane to be open on load.
   
 ### Tabs helper:
 

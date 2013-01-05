@@ -1,14 +1,14 @@
 Gem::Specification.new do |s|
   s.name         = 'bootstrap-components-helpers'
   s.summary      = 'Accordion view helper for Twitter Bootstrap'
-  s.description  = 'A micro gem providing an accordion view helper that generates the proper markup for Twitter Bootstrap'
-  s.version      = '0.0.1'
+  s.description  = 'A micro gem providing an accordion view helper that generates the proper markup for Twitter Bootstrap. Modified by Graham to specify open accordion pane right on pane'
+  s.version      = '0.0.2'
   s.platform     = Gem::Platform::RUBY
 
   s.files        = ['bootstrap-components-helpers.rb', 'accordion_helper.rb', 'tabs_helper.rb']
   s.require_path = '.'
 
-  s.author      = 'Ivan Schneider'
+  s.authors     = ['Ivan Schneider', 'Graham Torn']
   s.email       = 'git@ivanschneider.fr'
   s.homepage    = 'https://dbinsights.herokuapp.com'
 
