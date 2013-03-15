@@ -1,17 +1,18 @@
 Gem::Specification.new do |s|
   s.name         = 'bootstrap-components-helpers'
-  s.summary      = 'Accordion view helper for Twitter Bootstrap'
-  s.description  = 'A micro gem providing an accordion view helper that generates the proper markup for Twitter Bootstrap. Modified by Graham to specify open accordion pane right on pane'
-  s.version      = '0.0.2'
+  s.summary      = 'View helpers for Twitter Bootstrap components'
+  s.description  = 'View helpers that generate the proper markup for some Twitter Bootstrap components'
+  s.version      = '0.0.3'
   s.platform     = Gem::Platform::RUBY
 
-  s.files        = ['bootstrap-components-helpers.rb', 'accordion_helper.rb', 'tabs_helper.rb']
-  s.require_path = '.'
+  s.files        = Dir['README.markdown', 'lib/**/*']
+  s.test_files   = Dir["test/**/*.rb"]
+  s.require_path = 'lib'
 
-  s.authors     = ['Ivan Schneider', 'Graham Torn']
+  s.author      = 'Ivan Schneider'
   s.email       = 'git@ivanschneider.fr'
   s.homepage    = 'https://dbinsights.herokuapp.com'
 
-  # s.test_file    = '_spec.rb'
+  s.add_dependency 'actionpack', '>= 3.2.0'
   # s.add_development_dependency('rspec', ["~> 2.8"])
 end

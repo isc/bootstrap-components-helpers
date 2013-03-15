@@ -4,7 +4,7 @@ Provides an `accordion` helper and a `tabs` helper
 
 In your Gemfile:
 
-    gem 'bootstrap-components-helpers', :git => 'git://gist.github.com/5105757.git'
+    gem 'bootstrap-components-helpers'
 
 ### Accordion helper:
     
@@ -32,7 +32,14 @@ In your Gemfile:
         
 `tabs` method options :
 
-  - `:active` : when you want that pane to be active on load.
-  
   - `:direction` : to control the positioning of the tabs. Valid values are `below`, `left`, `right` and `above` (default is `above`).
   - `:style` : `tabs` or `pills` (default is `tabs`).
+
+`pane` method options :
+
+  - `:active` : when you want that pane to be active on load.
+
+### Contributors
+
+  - Graham Torn
+  - Caleb Adam Haye
