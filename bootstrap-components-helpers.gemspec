@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
 
   s.author      = 'Ivan Schneider'
   s.email       = 'git@ivanschneider.fr'
-  s.homepage    = 'https://dbinsights.herokuapp.com'
+  s.homepage    = 'https://github.com/isc/bootstrap-components-helpers'
 
   s.add_dependency 'actionpack', '>= 3.2.0'
   # s.add_development_dependency('rspec', ["~> 2.8"])
