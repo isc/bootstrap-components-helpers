@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AccordionHelperTest < ActionView::TestCase
+class TabsHelperTest < ActionView::TestCase
   
   include BootstrapComponentsHelpers::TabsHelper
   

@@ -3,7 +3,9 @@ module BootstrapComponentsHelpers
     def accordion opts = {}
       opts[:accordion_id] ||= 'accordion'
       builder = AccordionBuilder.new opts, self
-      content_tag :div, :class => 'accordion', :id => opts[:accordion_id] do
+      css_class = ['accordion']
+      css_class << opts[:class] if opts[:class].present?
+      content_tag :div, :class => css_class, :id => opts[:accordion_id] do
         yield builder
       end
     end

@@ -17,6 +17,7 @@ In your Gemfile:
 `accordion` method options :
 
   - `:accordion_id` : when you want more than one accordion on the same page.
+  - `:class` : to add an additional CSS class to the container DIV.
 
 `pane` method options :
 
