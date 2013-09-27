@@ -40,6 +40,12 @@ In your Gemfile:
 
   - `:active` : when you want that pane to be active on load.
 
+### Modal helper:
+
+    = modal 'My modal title' do |modal|
+      - modal.body do
+        Inside the modal
+
 ### Contributors
 
   - Graham Torn

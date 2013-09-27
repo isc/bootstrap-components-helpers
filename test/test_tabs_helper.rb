@@ -5,11 +5,12 @@ class TabsHelperTest < ActionView::TestCase
   include BootstrapComponentsHelpers::TabsHelper
   
   test "calling tabs method" do
-    tabs do |tabs|
+    html = tabs do |tabs|
       tabs.pane 'My first pane' do
         'inside the pane'
       end
     end
+    assert_helper_output 'tabs', html
   end
 
 end
