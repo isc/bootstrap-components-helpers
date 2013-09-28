@@ -2,7 +2,7 @@ Gem::Specification.new do |s|
   s.name         = 'bootstrap-components-helpers'
   s.summary      = 'View helpers for Twitter Bootstrap components'
   s.description  = 'View helpers that generate the proper markup for some Twitter Bootstrap components'
-  s.version      = '0.0.6'
+  s.version      = '0.0.7'
   s.platform     = Gem::Platform::RUBY
 
   s.files        = Dir['README.markdown', 'lib/**/*']
