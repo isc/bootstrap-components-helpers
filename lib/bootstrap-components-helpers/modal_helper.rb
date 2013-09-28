@@ -9,8 +9,10 @@ module BootstrapComponentsHelpers
           content_tag(:a, '×', class: 'close', data: {dismiss: 'modal'}) + content_tag(:h3, title)
         end
         body = content_tag(:div, class: 'modal-body') {builder.body_content}
-        footer = content_tag(:div, class: 'modal-footer') do
-          builder.footer_content || content_tag(:a, 'Cancel', class: 'btn pull-right', data: {dismiss: 'modal'})
+        unless options[:skip_footer]
+          footer = content_tag(:div, class: 'modal-footer') do
+            builder.footer_content || content_tag(:a, 'Cancel', class: 'btn pull-right', data: {dismiss: 'modal'})
+          end
         end
         header + body + footer
       end
