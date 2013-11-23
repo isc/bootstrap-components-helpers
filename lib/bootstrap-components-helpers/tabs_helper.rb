@@ -39,7 +39,7 @@ module BootstrapComponentsHelpers
         content = capture(&block)
         if content.present?
           @pane_handles << [link, css_class]
-          @pane_contents << [[css_class, options[:class]].join(' '), title, tab_id, content]
+          @pane_contents << [[css_class, options[:class]], title, tab_id, content]
         end
         nil
       end
@@ -54,8 +54,10 @@ module BootstrapComponentsHelpers
 
       def pane_contents_html
         return if pane_contents.empty?
-        pane_contents.first[0] += ' in active' unless pane_contents.detect {|pc| pc[0] == 'active'}
+        pane_contents.first[0] << 'active' unless pane_contents.detect {|pc| pc[0].include? 'active'}
         pane_contents.map do |css_class, title, tab_id, content|
+          css_class << 'in' if css_class.include?('active') && css_class.include?('fade')
+          css_class = css_class.join(' ').strip
           content_tag :div, content, :class => "tab-pane #{css_class}", :id => "#{tab_id}"
         end.join("\n").html_safe
       end
