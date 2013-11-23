@@ -32,7 +32,7 @@ module BootstrapComponentsHelpers
         tab_id = options[:id] || default_tab_id(title)
         link = content_tag(:a, :'data-toggle' => 'tab', :href => "##{tab_id}") do
           if options[:icon]
-            title = raw(content_tag(:i, '', class: "icon-#{options[:icon]}") + ' ' + title)
+            title = raw(content_tag(:i, '', class: "#{options[:icon]}") + ' ' + title)
           end
           title
         end
