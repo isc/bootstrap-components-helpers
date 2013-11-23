@@ -1,7 +1,6 @@
 require 'test_helper'
 
-class AccordionHelperTest < ActionView::TestCase
-
+class TabsHelperTest < ActionView::TestCase
   include BootstrapComponentsHelpers::TabsHelper
 
   test "calling tabs method" do
@@ -19,6 +18,7 @@ class AccordionHelperTest < ActionView::TestCase
     assert_match /class=".*fade.*"/, content
     refute_match /<br>/, content
     refute_match /Empty pane/, content
+    assert_helper_output 'tabs', content
   end
 
 end

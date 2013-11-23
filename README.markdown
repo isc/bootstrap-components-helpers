@@ -1,6 +1,6 @@
 ## Twitter Bootstrap Components Helper
 
-Provides an `accordion` helper and a `tabs` helper
+Provides view helpers for **accordion**, **tabs** and **modal** Twitter Bootstrap components.
 
 In your Gemfile:
 
@@ -17,6 +17,7 @@ In your Gemfile:
 `accordion` method options :
 
   - `:accordion_id` : when you want more than one accordion on the same page.
+  - `:class` : to add an additional CSS class to the container DIV.
 
 `pane` method options :
 
@@ -38,6 +39,16 @@ In your Gemfile:
 `pane` method options :
 
   - `:active` : when you want that pane to be active on load.
+
+### Modal helper:
+
+    = modal 'My modal title' do |modal|
+      - modal.body do
+        Inside the modal
+
+`modal` method options :
+
+  - `:skip_footer` : when you don't want a footer at all for your modal.
 
 ### Contributors
 
