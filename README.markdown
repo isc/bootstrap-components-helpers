@@ -54,3 +54,5 @@ In your Gemfile:
 
   - Graham Torn
   - Caleb Adam Haye
+  - Darkside73
+  - Dave Burt

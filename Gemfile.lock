@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bootstrap-components-helpers (0.0.7)
+    bootstrap-components-helpers (0.0.8)
       actionpack (>= 3.2.0)
 
 GEM
