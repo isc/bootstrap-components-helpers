@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/isc/bootstrap-components-helpers.svg?branch=master)](https://travis-ci.org/isc/bootstrap-components-helpers)
 ## Twitter Bootstrap Components Helper
 
 Provides view helpers for **accordion**, **tabs** and **modal** Twitter Bootstrap components.

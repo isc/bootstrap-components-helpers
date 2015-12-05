@@ -3,7 +3,7 @@ module BootstrapComponentsHelpers
     def accordion opts = {}
       opts[:accordion_id] ||= 'accordion'
       builder = AccordionBuilder.new opts, self
-      css_class = ['accordion']
+      css_class = ['panel-group']
       css_class << opts[:class] if opts[:class].present?
       content_tag :div, :class => css_class, :id => opts[:accordion_id] do
         yield builder
@@ -22,13 +22,15 @@ module BootstrapComponentsHelpers
 
       def pane title, options = {}, &block
         css_class = options[:open] ? 'in' : ''
-        content_tag :div, :class => 'accordion-group' do
-          heading = content_tag :div, :class => 'accordion-heading' do
-            link_to title, "##{title.parameterize}_pane", :class => 'accordion-toggle', :'data-toggle' => 'collapse',
+        content_tag :div, :class => 'panel panel-default' do
+          heading = content_tag :div, :class => 'panel-heading' do
+            content_tag :h4, :class => 'panel-title' do
+              link_to title, "##{title.parameterize}_pane", :'data-toggle' => 'collapse',
             :'data-parent' => "##{@opts[:accordion_id]}"
+            end
           end
-          body = content_tag :div, :class => "accordion-body collapse #{css_class}", :id => "#{title.parameterize}_pane" do
-            content_tag :div, :class => 'accordion-inner' do
+          body = content_tag :div, :class => "panel-collapse collapse #{css_class}", :id => "#{title.parameterize}_pane" do
+            content_tag :div, :class => 'panel-body' do
               capture(&block)
             end
           end
