@@ -34,7 +34,6 @@ In your Gemfile:
         
 `tabs` method options :
 
-  - `:direction` : to control the positioning of the tabs. Valid values are `below`, `left`, `right` and `above` (default is `above`).
   - `:style` : `tabs` or `pills` (default is `tabs`).
 
 `pane` method options :
