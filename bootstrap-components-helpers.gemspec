@@ -13,5 +13,6 @@ Gem::Specification.new do |s|
   s.email       = 'git@ivanschneider.fr'
   s.homepage    = 'https://github.com/isc/bootstrap-components-helpers'
   s.license     = 'MIT'
-  s.add_dependency 'actionpack', '>= 3.2.0'
+  s.add_dependency 'actionpack', '>= 4.0.0'
+  s.add_development_dependency 'minitest'
 end

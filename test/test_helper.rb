@@ -1,7 +1,9 @@
-require 'test/unit'
+require 'minitest/autorun'
 require 'action_view'
 require 'action_view/template'
 require 'bootstrap-components-helpers'
+
+ActiveSupport.test_order = :random
 
 class ActionView::TestCase
 
