@@ -2,7 +2,6 @@
 
 module BootstrapComponentsHelpers
   module ModalHelper
-    
     def modal title, options = {}
       builder = ModalBuilder.new self
       yield builder
@@ -23,26 +22,23 @@ module BootstrapComponentsHelpers
         end
       end
     end
-    
+
     class ModalBuilder
-      
       attr_reader :parent, :body_content, :footer_content
       delegate :capture, to: :parent
-      
+
       def initialize parent
         @parent = parent
       end
-      
+
       def body &block
         @body_content = capture(&block)
       end
-      
+
       def footer &block
         @footer_content = capture(&block)
       end
-      
     end
-    
   end
 end
 

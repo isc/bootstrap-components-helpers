@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.platform     = Gem::Platform::RUBY
 
   s.files        = Dir['README.markdown', 'lib/**/*']
-  s.test_files   = Dir["test/**/*.rb"]
+  s.test_files   = Dir['test/**/*.rb']
   s.require_path = 'lib'
 
   s.author      = 'Ivan Schneider'

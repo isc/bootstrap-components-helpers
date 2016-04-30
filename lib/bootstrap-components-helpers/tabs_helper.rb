@@ -6,8 +6,8 @@ module BootstrapComponentsHelpers
       yield builder
       pane_handles_html = builder.pane_handles_html
       return unless pane_handles_html
-      tabs = content_tag(:ul, builder.pane_handles_html, :class => "nav nav-#{opts[:style]}")
-      contents = content_tag(:div, builder.pane_contents_html, :class => 'tab-content')
+      tabs = content_tag(:ul, builder.pane_handles_html, class: "nav nav-#{opts[:style]}")
+      contents = content_tag(:div, builder.pane_contents_html, class: 'tab-content')
       content_tag :div do
         tabs + contents
       end
@@ -17,7 +17,7 @@ module BootstrapComponentsHelpers
       include ActionView::Helpers::OutputSafetyHelper
 
       attr_reader :parent, :pane_contents, :pane_handles
-      delegate :capture, :content_tag, :to => :parent
+      delegate :capture, :content_tag, to: :parent
 
       def initialize parent
         @parent = parent
@@ -28,9 +28,9 @@ module BootstrapComponentsHelpers
       def pane title, options = {}, &block
         css_class = options[:active] ? 'active' : ''
         tab_id = options[:id] || default_tab_id(title)
-        link = content_tag(:a, :'data-toggle' => 'tab', :href => "##{tab_id}") do
+        link = content_tag(:a, 'data-toggle': 'tab', href: "##{tab_id}") do
           if options[:icon]
-            title = raw(content_tag(:i, '', class: "#{options[:icon]}") + ' ' + title)
+            title = raw(content_tag(:i, '', class: options[:icon].to_s) + ' ' + title)
           end
           title
         end
@@ -46,7 +46,7 @@ module BootstrapComponentsHelpers
         return if pane_handles.empty?
         pane_handles.first[1] = 'active' unless pane_handles.detect {|ph| ph[1] == 'active'}
         pane_handles.map do |link, css_class|
-          content_tag(:li, link, :class => css_class)
+          content_tag(:li, link, class: css_class)
         end.join("\n").html_safe
       end
 
@@ -56,7 +56,7 @@ module BootstrapComponentsHelpers
         pane_contents.map do |css_class, title, tab_id, content|
           css_class << 'in' if css_class.include?('active') && css_class.include?('fade')
           css_class = css_class.join(' ').strip
-          content_tag :div, content, :class => "tab-pane #{css_class}", :id => "#{tab_id}"
+          content_tag :div, content, class: "tab-pane #{css_class}", id: tab_id.to_s
         end.join("\n").html_safe
       end
 
@@ -65,9 +65,7 @@ module BootstrapComponentsHelpers
       def default_tab_id(title)
         title.parameterize + '_tab'
       end
-
     end
-
   end
 end
 
