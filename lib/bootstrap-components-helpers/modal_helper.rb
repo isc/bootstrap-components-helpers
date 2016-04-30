@@ -6,7 +6,7 @@ module BootstrapComponentsHelpers
     def modal title, options = {}
       builder = ModalBuilder.new self
       yield builder
-      content_tag :div, class: 'modal fade', id: options[:id] do
+      content_tag :div, class: 'modal fade', tabindex: -1, id: options[:id] do
         content_tag :div, class: 'modal-dialog' do
           content_tag :div, class: 'modal-content' do
             header = content_tag :div, class: 'modal-header' do
